@@ -1,0 +1,9 @@
+name: 'crystal-github-action'
+description: 'A template repo for running GitHub Actions with Crystal Lang'
+author: "Grant Birkinbine"
+runs:
+  using: 'node20'
+  main: 'src/main.js'
+branding:
+  icon: 'terminal'  
+  color: 'gray-dark'
