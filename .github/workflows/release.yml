@@ -42,7 +42,7 @@ jobs:
         run: |
           mkdir -p releases
           script/build --production
-          mv ./bin/linux-amd64 ./releases/linux-amd64
+          mv ./bin/github-action ./releases/github-action-linux-amd64
 
       - name: generate artifact attestation
         uses: actions/attest-build-provenance@v1.4.3

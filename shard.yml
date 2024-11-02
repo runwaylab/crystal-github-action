@@ -1,20 +1,16 @@
-name: base-template
-version: 0.1.0
+name: github-action
+version: 0.0.1
 
 authors:
   - GrantBirki
 
 targets:
-  crystal-base-template:
+  github-action:
     main: src/cli.cr
 
 crystal: ">= 1.13.2"
 
 license: MIT
-
-dependencies:
-  octokit:
-    github: octokit-cr/octokit.cr
 
 development_dependencies:
   ameba:
