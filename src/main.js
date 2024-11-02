@@ -2,6 +2,9 @@ const childProcess = require("child_process");
 const os = require("os");
 const process = require("process");
 
+// the prefix of the binary (aka the name of the project)
+const binaryPrefix = "github-action"
+
 function chooseBinary() {
   const platform = os.platform();
   const arch = os.arch();
@@ -33,7 +36,7 @@ function chooseBinary() {
 
 function main() {
   const binary = chooseBinary();
-  const mainScript = `./bin/${binary}`;
+  const mainScript = `./bin/${binaryPrefix}-${binary}`;
   const spawnSyncReturns = childProcess.spawnSync(mainScript, {
     stdio: "inherit",
   });
