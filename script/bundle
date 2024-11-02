@@ -6,7 +6,7 @@ source script/setup-env $@
 
 echo -e "🔨 ${BLUE}building in ${PURPLE}release${BLUE} mode${OFF}"
 
-docker run --rm -it -v $(pwd):/workspace -w /workspace crystallang/crystal:1.14-dev-alpine \
+docker run --rm -it -v $(pwd):/workspace -w /workspace crystallang/crystal:1.14-alpine \
   shards build --production --release --progress --debug --error-trace --static
 
 mv bin/github-action bin/github-action-linux-amd64
