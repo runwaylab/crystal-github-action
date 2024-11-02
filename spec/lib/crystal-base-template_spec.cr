@@ -1,10 +1,10 @@
 require "../spec_helper.cr"
-require "../../src/lib/crystal-base-template"
+require "../../src/version"
 
-describe Crystal::Base::Template do
-  describe "#add" do
-    it "adds two numbers together" do
-      Crystal::Base::Template.add(1, 2).should eq(3)
+describe CrystalGitHubAction do
+  describe "#version" do
+    it "finds that the version is of the correct type" do
+      CrystalGitHubAction::VERSION.should be_a(String)
     end
   end
 end
