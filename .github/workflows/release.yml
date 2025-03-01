@@ -45,7 +45,7 @@ jobs:
           mv ./bin/github-action ./releases/github-action-linux-amd64
 
       - name: generate artifact attestation
-        uses: actions/attest-build-provenance@v2.1.0
+        uses: actions/attest-build-provenance@v2.2.2
         with:
           subject-path: 'releases/*'
       
@@ -62,7 +62,7 @@ jobs:
 
       - name: push release
         id: release
-        uses: ncipollo/release-action@v1.14.0
+        uses: ncipollo/release-action@v1.16.0
         with:
           artifacts: "./releases/*"
           tag: ${{ env.VERSION }}
