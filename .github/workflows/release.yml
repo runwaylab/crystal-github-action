@@ -45,7 +45,7 @@ jobs:
           mv ./bin/github-action ./releases/github-action-linux-amd64
 
       - name: generate artifact attestation
-        uses: actions/attest-build-provenance@v2.2.2
+        uses: actions/attest-build-provenance@v2.2.3
         with:
           subject-path: 'releases/*'
       
