@@ -16,14 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: fetch crystal version
         id: crystal-version
         run: echo "crystal=$(cat .crystal-version)" >> $GITHUB_OUTPUT
 
       - name: install crystal
-        uses: crystal-lang/install-crystal@v1.8.2
+        uses: crystal-lang/install-crystal@v1.8.3
         with:
           crystal: ${{ steps.crystal-version.outputs.crystal }}
 
@@ -45,7 +45,7 @@ jobs:
           mv ./bin/github-action ./releases/github-action-linux-amd64
 
       - name: generate artifact attestation
-        uses: actions/attest-build-provenance@v2.4.0
+        uses: actions/attest-build-provenance@v3.0.0
         with:
           subject-path: 'releases/*'
       
@@ -62,7 +62,7 @@ jobs:
 
       - name: push release
         id: release
-        uses: ncipollo/release-action@v1.18.0
+        uses: ncipollo/release-action@v1.20.0
         with:
           artifacts: "./releases/*"
           tag: ${{ env.VERSION }}
